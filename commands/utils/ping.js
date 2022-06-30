@@ -2,7 +2,7 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports = {
     name: 'ping',
-    description: 'Commande ping!',
+    description: 'Information sur la latence de l\'API et du BOT.',
     async runSlash(client, interaction) {
         const tryPong = await interaction.reply({ content: 'Chargement des données ...', ephemeral: true, fetchReply: true});
         const tryPongTimestamp = new Date(tryPong.timestamp).getTime();
