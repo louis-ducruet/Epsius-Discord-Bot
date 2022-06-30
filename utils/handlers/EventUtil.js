@@ -1,7 +1,7 @@
 const { promisify } = require('util');
 const { glob } = require('glob');
 const pGlob = promisify(glob);
-const logger = require('./../modules/logger');
+const logger = require('../modules/logger');
 
 module.exports = async client => {
     (await pGlob(`${process.cwd().replaceAll('\\', '/')}/events/*/*.js`)).map(async eventFile => {
