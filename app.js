@@ -5,9 +5,10 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 client.commands = new Collection();
+client.buttons = new Collection();
 
 logger.info('---- Importation ----')
-const handlers = ['CommandUtil', 'EventUtil']
+const handlers = ['CommandUtil', 'ButtonUtil', 'EventUtil']
 handlers.forEach(handler => { require(`./utils/handlers/${handler}`)(client) });
 
 process.on('uncaughtException', (err, origin) => logger.error(`uncaughtException : ${err}\n Origine : ${origin}`));
