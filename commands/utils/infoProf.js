@@ -48,12 +48,12 @@ module.exports = {
 
         const embed = new MessageEmbed()
             .setTitle(inputNom)
-            .setDescription(`${inputModules}\n\n***Lien Discord peut ne pas fonctionner sur mobile !***`)
+            .setDescription(`${inputModules}\n\n***La première ligne du compte discord fonctionne uniquement si vous avez un serveur en commun !***`)
             .setThumbnail('https://cdn.icon-icons.com/icons2/3142/PNG/512/id_card_identity_name_identification_icon_192543.png')
             .setColor('#3498db')
             .addFields(
                 { name: 'Email', value: inputEmail ? inputEmail : '???', inline: true },
-                { name: 'Discord', value: inputDiscord ? `${profUser}` : '???', inline: true }
+                { name: 'Discord', value: inputDiscord ? `${profUser}\n${profUser.username}#${profUser.discriminator}` : '???', inline: true }
             )
 
         const buttons = new MessageActionRow()
@@ -65,6 +65,6 @@ module.exports = {
                     .setURL(`https://epsius-bot-action.netlify.app?token=2Sy8eL9b27sx67Am4UCHRb&url=mailto:${inputEmail}`)
             );
         
-        interaction.reply({ embeds: [embed] });
+        interaction.reply({ embeds: [embed], components: [buttons] });
     }
 }
