@@ -24,12 +24,18 @@ module.exports = {
         type: 'STRING',
         name: 'discord',
         description: 'Le discord de l\'intervenant (User ID)'
+    },
+    {
+        type: 'STRING',
+        name: 'autre',
+        description: 'Information complémentaire comme une autre adresse email'
     }],
     async runSlash(client, interaction) {
         const inputNom = interaction.options.getString('nom');
         const inputModules = interaction.options.getString('modules');
         let inputEmail = interaction.options.getString('email');
         let inputDiscord = interaction.options.getString('discord');
+        const inputAutre = interaction.options.getString('autre');
 
         if (!RegExp('^[0-9]{18}$').test(inputDiscord)) inputDiscord = null;
         if (!RegExp('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$').test(inputEmail)) inputEmail = null;
@@ -55,6 +61,10 @@ module.exports = {
                 { name: 'Email', value: inputEmail ? inputEmail : '???', inline: true },
                 { name: 'Discord', value: inputDiscord ? `${profUser}\n${profUser.username}#${profUser.discriminator}` : '???', inline: true }
             )
+        
+        if (inputAutre){
+            embed.addField('Autre', inputAutre, false);
+        }
 
         const buttons = new MessageActionRow()
             .addComponents(
