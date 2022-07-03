@@ -24,5 +24,5 @@ module.exports = async client => {
 
 const eventList = [
     'ready', 'resumed', 'voiceServerUpdate', 'userUpdate', 'applicationCommandCreate', 
-    'applicationCommandUpdate', 'applicationCommandDelete', 'interactionCreate'
+    'applicationCommandUpdate', 'applicationCommandDelete', 'interactionCreate', 'messageCreate'
 ];
