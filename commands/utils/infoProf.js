@@ -54,7 +54,7 @@ module.exports = {
 
         const embed = new MessageEmbed()
             .setTitle(inputNom)
-            .setDescription(`${inputModules}\n\n***La première ligne du compte discord fonctionne uniquement si vous avez un serveur en commun !***`)
+            .setDescription(`${inputModules}\n‎`)
             .setThumbnail('https://cdn.icon-icons.com/icons2/3142/PNG/512/id_card_identity_name_identification_icon_192543.png')
             .setColor('#3498db')
             .addFields(
