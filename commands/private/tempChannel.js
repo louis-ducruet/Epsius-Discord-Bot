@@ -38,7 +38,7 @@ module.exports = {
     async runSlash(client, interaction) {
         const inputNom = interaction.options.getString('nom');
         const inputGroupe = interaction.options.getInteger('groupe');
-        let permission = [];
+        let permission = [{ id: '961267363808944169', deny: ['VIEW_CHANNEL'] }];
         switch (inputGroupe){
             case 10:
                 if (!interaction.member.roles.cache.has('991311405951234208')) return interaction.reply({ content: `Vous n'avez pas la permission de faire cette action !`, ephemeral: true });
