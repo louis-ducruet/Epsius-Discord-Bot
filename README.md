@@ -16,10 +16,16 @@
         <img src='https://img.shields.io/github/last-commit/louis-ducruet/Epsius-Discord-Bot?style=for-the-badge' alt='Badge de commit'>
     </a>
     <br />
+    <br />
     <img src='https://cdn.icon-icons.com/icons2/138/PNG/256/cyborg_tux_penguin_20869.png' alt='Logo' width='128' height='auto' style='border-radius: 2rem'>
     <h2>Epsius Discord Bot</h2>
     <p>Bot Discord pour le serveur SN2 22-23 WIPS Nantes.</p>
-    <a href="#">Expore le wiki →</a>
+    <a href='https://github.com/louis-ducruet/Epsius-Discord-Bot/wiki'>Expore le wiki →</a>
+    <br/>
+    <a href='https://github.com/louis-ducruet/Epsius-Discord-Bot/discussions'>Voir les discussions</a>
+    .
+    <a href='https://github.com/louis-ducruet/Epsius-Discord-Bot/projects/1'>Avancement du projet</a>
 </div>
 <br />
-<h1>README en cours de rédaction</h1>
+
+# README en cours de rédaction
