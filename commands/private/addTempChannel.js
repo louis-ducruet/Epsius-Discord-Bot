@@ -1,6 +1,6 @@
 module.exports = {
-    name: 'temp_channel',
-    description: 'Créer des salon temporaires pour des discussions sur un module.',
+    name: 'add_temp_channel',
+    description: 'Créer un salon temporaire pour des discussions sur un module.',
     options: [{
         type: 'STRING',
         name: 'nom',
@@ -70,12 +70,12 @@ module.exports = {
         }
         interaction.guild.channels.create(inputNom, { 
             type: 'GUILD_TEXT', 
-            reason: `Channel créé avec la commande /temp_channel par ${interaction.user.username}#${interaction.user.discriminator}`,
+            reason: `Channel créé avec la commande /add_temp_channel par ${interaction.user.username}#${interaction.user.discriminator}`,
             parent: '993875082038476800',
             permissionOverwrites: permission
         }).then(channel => {
             channel.send(`Bienvenue dans le channel temporaire ${inputNom} créé par ${interaction.user.username}#${interaction.user.discriminator}!`);
-            interaction.reply({ content: `Le channel ${channel} a été créé avec succès !`, ephemeral: true });
+            interaction.reply({ content: `Le channel ${channel} a été créé avec succès !` });
         });
     }
 }
