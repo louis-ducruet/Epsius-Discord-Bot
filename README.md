@@ -20,7 +20,9 @@
     <img src='https://cdn.icon-icons.com/icons2/138/PNG/256/cyborg_tux_penguin_20869.png' alt='Logo' width='128' height='auto' style='border-radius: 2rem'>
     <h2>Epsius Discord Bot</h2>
     <p>Bot Discord pour le serveur SN2 22-23 WIPS Nantes.</p>
-    <a href='https://github.com/louis-ducruet/Epsius-Discord-Bot/wiki'>Expore le wiki →</a>
+    <strong>
+        <a href='https://github.com/louis-ducruet/Epsius-Discord-Bot/wiki'>Expore le wiki →</a>
+    </strong>
     <br/>
     <a href='https://github.com/louis-ducruet/Epsius-Discord-Bot/discussions'>Voir les discussions</a>
     .
