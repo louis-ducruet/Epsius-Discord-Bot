@@ -72,7 +72,7 @@ module.exports = {
                     .setStyle('LINK')
                     .setEmoji({id: null, name: '📧'})
                     .setLabel('Envoyer un e-mail')
-                    .setURL(`https://epsius-bot-action.netlify.app?token=2Sy8eL9b27sx67Am4UCHRb&url=mailto:${inputEmail}`)
+                    .setURL(`https://epsius-discord-bot.netlify.app/mailto/#${inputEmail}`)
             );
         
         interaction.reply({ embeds: [embed], components: [buttons] });
