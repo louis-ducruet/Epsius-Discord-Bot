@@ -74,4 +74,39 @@ Il est donc possible que certaines fonctionnalités ne fonctionnent plus suite �
 
 # Bien débuter
 
+Les étapes pour lancé le projet sur votre machine en local.
+
+## Prérequis
+
+ - Avoir un Token pour son Bot Disocrd : [Tutoriel en anglais](https://discordjs.guide/preparations/setting-up-a-bot-application.html#creating-your-bot)
+ - Avoir un serveur Discord : [Tutoriel](https://support.discord.com/hc/fr/articles/204849977-Comment-cr%C3%A9er-un-serveur-)
+ - Installer Node.js : [Site](https://nodejs.org/en/) <br>*PS : Discord.js nécésite Node.js 16.9.0 ou supérieur*
+ - Avoir git sur sa machine : [Site](https://git-scm.com/)
+
+<p align="right">(<a href="#readme-top">Haut de page ↑</a>)</p>
+
+## Instalation
+
+Pour commencer il faut cloner le projet : 
+```bash
+git clone https://github.com/louis-ducruet/Epsius-Discord-Bot.git
+```
+Il faut ensuite installer les dépendances
+```bash
+cd Epsius-Discord-Bot
+npm install
+```
+Il faut ensuite compléter le fichier .env
+<br/>[Lien vers le wiki prochainement disponible](#)
+
+<p align="right">(<a href="#readme-top">Haut de page ↑</a>)</p>
+
+## Lancement
+
+Il ne reste plus qu'à lancer le bot avec la commande
+
+```bash
+node .
+```
+
 <p align="right">(<a href="#readme-top">Haut de page ↑</a>)</p>
