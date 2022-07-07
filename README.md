@@ -85,7 +85,7 @@ Les étapes pour lancé le projet sur votre machine en local.
 
 <p align="right">(<a href="#readme-top">Haut de page ↑</a>)</p>
 
-## Instalation
+## Installation
 
 Pour commencer il faut cloner le projet : 
 ```bash
@@ -108,5 +108,25 @@ Il ne reste plus qu'à lancer le bot avec la commande
 ```bash
 node .
 ```
+
+# Contribuer
+
+Si vous avez une suggestion qui améliorerait le projet, veuillez fork le référentiel et créer une pull request. Vous pouvez également simplement ouvrir une issue avec la balise « enhancement ».
+
+1. Fork le Project
+2. Créer votre Branche (`git checkout -b feature/AmazingFeature`)
+3. Commit vos changements (`git commit -m 'Add some AmazingFeature'`)
+4. Push la Branch (`git push origin feature/AmazingFeature`)
+5. Ouvrir une Pull Request
+
+### ⚠️ **Les contributions sont temporairement désactivé** ⚠️
+
+<p align="right">(<a href="#readme-top">Haut de page ↑</a>)</p>
+
+# Contact
+
+Louis DUCRUET - [GitHub](https://github.com/louis-ducruet) • [Twitter](https://twitter.com/louis_ducruet) • [LinkedIn](https://www.linkedin.com/in/louis-ducruet/) 
+
+Lien du projet - [https://github.com/louis-ducruet/Epsius-Discord-Bot](https://github.com/louis-ducruet/Epsius-Discord-Bot)
 
 <p align="right">(<a href="#readme-top">Haut de page ↑</a>)</p>
