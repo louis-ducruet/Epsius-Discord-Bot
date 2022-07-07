@@ -1,4 +1,5 @@
 <div id='readme-top'></div>
+
 <!-- Header -->
 <div align="center" class="header">
     <a href='https://github.com/louis-ducruet/Epsius-Discord-Bot/blob/main/package.json'>
@@ -33,6 +34,21 @@
 
 # A propos du projet
 
+Epsius est un bot discord développer pour le serveur discord PSN-2 EPSI-WIS Nantes (2022-2023).
+
+Mais attention Epsius n'est pas un bot comme les autres !
+
+Suite à diverses expériences scientifiques, un penguin 🐧 à demi-robot 🤖 avec une conscience vient de créer son compte Discord.
+
+Son passe-temps, rendre des services aux étudiants d'EPSI-WIS Nantes.
+
+Parmi les services qu'il rend :
+
+ - Il attribue les classes
+ - Il gère des salons temporaires
+ - Il donne des informations sur sa latence et celle de l'API Discord
+ - Il met en page les informations sur les intervenants
+
 <p align="right">(<a href="#readme-top">Haut de page ↑</a>)</p>
 
 ## Les dépendances
@@ -51,8 +67,8 @@ Le bot discord Epsius a besoin de plusieurs packages pour fonctionner :
     </a>
 </div>
 
-⚠️ **Le code est développé dans les versions du package.json.** ⚠️
-<br>Il est donc possible que des modifications dans les versions supérieures des packages certaines fonctionnalités ne fonctionne plus.
+### ⚠️ **Le code est développé dans les versions du package.json** ⚠️
+Il est donc possible que certaines fonctionnalités ne fonctionnent plus suite à des modifications dans les versions supérieures des packages.
 
 <p align="right">(<a href="#readme-top">Haut de page ↑</a>)</p>
 
