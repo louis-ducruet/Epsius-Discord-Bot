@@ -67,8 +67,9 @@ Le bot discord Epsius a besoin de plusieurs packages pour fonctionner :
     </a>
 </div>
 
-### ⚠️ **Le code est développé dans les versions du package.json** ⚠️
-Il est donc possible que certaines fonctionnalités ne fonctionnent plus suite à des modifications dans les versions supérieures des packages.
+> **Warning**
+> 
+> Il est donc possible que certaines fonctionnalités ne fonctionnent plus suite à des modifications dans les versions supérieures des packages.
 
 <p align="right">(<a href="#readme-top">Haut de page ↑</a>)</p>
 
@@ -80,7 +81,10 @@ Les étapes pour lancé le projet sur votre machine en local.
 
  - Avoir un Token pour son Bot Disocrd : [Tutoriel en anglais](https://discordjs.guide/preparations/setting-up-a-bot-application.html#creating-your-bot)
  - Avoir un serveur Discord : [Tutoriel](https://support.discord.com/hc/fr/articles/204849977-Comment-cr%C3%A9er-un-serveur-)
- - Installer Node.js : [Site](https://nodejs.org/en/) <br>*PS : Discord.js nécésite Node.js 16.9.0 ou supérieur*
+ - Installer Node.js : [Site](https://nodejs.org/en/) 
+> **Note**
+> 
+> Discord.js nécésite Node.js 16.9.0 ou supérieur
  - Avoir git sur sa machine : [Site](https://git-scm.com/)
 
 <p align="right">(<a href="#readme-top">Haut de page ↑</a>)</p>
@@ -113,15 +117,8 @@ node .
 
 # Contribuer
 
-Si vous avez une suggestion qui améliorerait le projet, veuillez fork le référentiel et créer une pull request. Vous pouvez également simplement ouvrir une issue avec la balise « enhancement ».
-
-1. Fork le Project
-2. Créer votre Branche (`git checkout -b feature/AmazingFeature`)
-3. Commit vos changements (`git commit -m 'Add some AmazingFeature'`)
-4. Push la Branch (`git push origin feature/AmazingFeature`)
-5. Ouvrir une Pull Request
-
-### ⚠️ **Les contributions sont temporairement désactivé** ⚠️
+Vous avez une proposition d'amélioration pour le projet. N'hésitez pas à aller lire les règles de contribution au projet.
+<br>[Par Ici](/CONTRIBUTING.md)
 
 <p align="right">(<a href="#readme-top">Haut de page ↑</a>)</p>
 
