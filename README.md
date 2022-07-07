@@ -109,6 +109,8 @@ Il ne reste plus qu'à lancer le bot avec la commande
 node .
 ```
 
+<p align="right">(<a href="#readme-top">Haut de page ↑</a>)</p>
+
 # Contribuer
 
 Si vous avez une suggestion qui améliorerait le projet, veuillez fork le référentiel et créer une pull request. Vous pouvez également simplement ouvrir une issue avec la balise « enhancement ».
