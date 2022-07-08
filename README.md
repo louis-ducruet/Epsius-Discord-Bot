@@ -80,17 +80,21 @@ Les étapes pour lancé le projet sur votre machine en local.
 <a href='https://discordjs.guide/preparations/setting-up-a-bot-application.html#creating-your-bot' target='_blank' rel="noreferrer noopener">
     Tutoriel en anglais
 </a>
+
  - Avoir un serveur Discord :
 <a href='https://support.discord.com/hc/fr/articles/204849977-Comment-cr%C3%A9er-un-serveur-' target='_blank' rel="noreferrer noopener">
     Tutoriel
 </a>
+
  - Installer Node.js :
 <a href='https://nodejs.org/en/' target='_blank' rel="noreferrer noopener">
     Site
 </a>
+
 > **Note**
 > 
 > Discord.js nécésite Node.js 16.9.0 ou supérieur
+
  - Avoir git sur sa machine :
 <a href='https://git-scm.com/' target='_blank' rel="noreferrer noopener">
     Site
