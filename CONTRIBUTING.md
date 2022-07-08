@@ -55,12 +55,12 @@ Vous avez une suggestion qui améliorerait le projet ? Alors vous êtes au bon e
     </tr>
     <tr>
         <td>
-            Vous devez ouvrir une issue en utilisant le <a href='#'>template d'ajout</a> ou le <a href='#'>template de bug</a>.
+            Vous devez ouvrir une issue en utilisant le <a href='https://github.com/louis-ducruet/Epsius-Discord-Bot/issues/new?assignees=&labels=enhancement&template=proposer-une-fonctionnalit-.md&title=%5BPROP%5D+%3A+Nom+de+la+proposition'>template d'ajout</a> ou le <a href='https://github.com/louis-ducruet/Epsius-Discord-Bot/issues/new?assignees=&labels=bug&template=signalement-d-un-bug.md&title=%5BBUG%5D+%3A+Nom+du+bug'>template de bug</a>.
             <br>L'objectif est de présenter votre fonctionnalité et sa nécessité.
         </td>
         <td>
             Vous devez fork le projet.
-            <br>Une fois votre fonctionnalité développée dans une branche avec un nom explicite, vous devez ouvrir une pull request en utilisant le <a href='#'>template d'ajout</a> ou le <a href='#'>template de bug</a>.
+            <br>Une fois votre fonctionnalité développée dans une branche avec un nom explicite, vous devez ouvrir une pull request en utilisant le <a href='#'>template de proposition</a>.
         </td>
     </tr>
     <tr>

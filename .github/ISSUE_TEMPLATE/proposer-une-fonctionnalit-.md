@@ -7,11 +7,14 @@ assignees: ''
 
 ---
 
-**Votre demande de fonctionnalité est-elle liée à un problème ? Veuillez le décrire.**
+### **Votre demande de fonctionnalité est-elle liée à un problème ? Veuillez le décrire.**
+
 Une description claire et concise du problème. Ex. Je suis toujours frustré quand [...]
 
-**Décrivez la solution que vous souhaitez**
+### **Décrivez la solution que vous souhaitez**
+
 Une description claire et concise de ce que vous voulez qu’il se passe.
 
-**Autres informations utiles**
+### **Autres informations utiles**
+
 ...
