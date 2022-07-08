@@ -1,9 +1,8 @@
 const { Client, Collection } = require('discord.js');
 const client = new Client({intents: ['GUILDS', 'GUILD_MESSAGES']});
 const logger = require('./utils/modules/logger');
-const dotenv = require('dotenv');
+client.env = require('./env.json');
 
-dotenv.config();
 client.commands = new Collection();
 client.buttons = new Collection();
 
@@ -19,4 +18,4 @@ process.on('unhandledRejection', (reason, promise) => {
 process.on('exit', code => logger.warn(`Le processus s'est arrêté avec le code : ${code}`));
 process.on('warning', (...args) => console.log(...args));
 
-client.login(process.env.DISCORD_TOKEN);
+client.login(client.env.discord.token);
