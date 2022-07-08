@@ -6,7 +6,7 @@ module.exports = {
     async runSlash(client, interaction) {
         const embed = new MessageEmbed()
             .setTitle(':school_satchel: Accéder à son groupe')
-            .setDescription('Description provisoire')
+            .setDescription(process.env.GIVE_ROLE_DESCRIPTION)
             .setColor('#d8a824')
             .setThumbnail('https://cdn.icon-icons.com/icons2/2774/PNG/512/team_people_icon_176892.png')
 
