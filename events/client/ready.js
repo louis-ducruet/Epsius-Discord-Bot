@@ -10,5 +10,7 @@ module.exports = {
         const devGuild = await client.guilds.cache.get(process.envVar.discord.guild);
         // Ajout des commandes au serveur
         devGuild.commands.set(client.commands.map(cmd => cmd));
+        // Définie l'activité du bot
+        client.user.setActivity('la vie du serveur', {type: 'COMPETING'});
     }
 }
