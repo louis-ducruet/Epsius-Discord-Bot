@@ -1,5 +1,3 @@
-const logger = require("../../utils/modules/logger");
-
 module.exports = {
     name: 'interactionCreate',
     once: false,

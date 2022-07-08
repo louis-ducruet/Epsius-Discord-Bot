@@ -6,7 +6,7 @@ module.exports = {
     async execute(client) {
         logger.info(`${client.user.username} est en ligne !`);
 
-        const devGuild = await client.guilds.cache.get(client.env.discord.guild);
+        const devGuild = await client.guilds.cache.get(process.envVar.discord.guild);
         devGuild.commands.set(client.commands.map(cmd => cmd));
     }
 }

@@ -59,9 +59,6 @@ Le bot discord Epsius a besoin de plusieurs packages pour fonctionner :
     <a href='https://www.npmjs.com/package/discord.js'>
         <img src='https://img.shields.io/github/package-json/dependency-version/louis-ducruet/Epsius-Discord-Bot/discord.js?color=7289da&logo=discord&logoColor=7289da&style=for-the-badge' alt='Badge discord.js'>
     </a>
-    <a href='https://www.npmjs.com/package/dotenv'>
-        <img src='https://img.shields.io/github/package-json/dependency-version/louis-ducruet/Epsius-Discord-Bot/dotenv?color=ecd53f&logo=dev.to&logoColor=ecd53f&style=for-the-badge' alt='Badge dotenv'>
-    </a>
     <a href='https://www.npmjs.com/package/glob'>
         <img src='https://img.shields.io/github/package-json/dependency-version/louis-ducruet/Epsius-Discord-Bot/glob?color=6c3eff&logo=Octopus%20Deploy&logoColor=d370e8&style=for-the-badge' alt='Badge glob'>
     </a>
@@ -100,7 +97,7 @@ Il faut ensuite installer les dépendances
 cd Epsius-Discord-Bot
 npm install
 ```
-Il faut ensuite compléter le fichier .env
+Il faut ensuite compléter le fichier env.json
 <br/>[Lien vers le wiki prochainement disponible](#)
 
 <p align="right">(<a href="#readme-top">Haut de page ↑</a>)</p>

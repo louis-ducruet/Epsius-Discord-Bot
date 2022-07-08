@@ -71,10 +71,10 @@ module.exports = {
         interaction.guild.channels.create(inputNom, { 
             type: 'GUILD_TEXT', 
             reason: `Channel créé avec la commande /add_temp_channel par ${interaction.user.username}#${interaction.user.discriminator}`,
-            parent: '993875082038476800',
+            parent: process.envVar.discord.tempGroup,
             permissionOverwrites: permission
         }).then(channel => {
-            channel.send(`Bienvenue dans le channel temporaire ${inputNom} créé par ${interaction.user.username}#${interaction.user.discriminator}!`);
+            channel.send(`Bienvenue dans le channel temporaire ${inputNom} créé par ${interaction.user}!`);
             interaction.reply({ content: `Le channel ${channel} a été créé avec succès !` });
         });
     }
