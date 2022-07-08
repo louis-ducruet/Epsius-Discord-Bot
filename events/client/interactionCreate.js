@@ -12,12 +12,12 @@ module.exports = {
 
         } else if (interaction.isButton()){
 
-            const btn = client.buttons.get(interaction.customId);
-
-            if (!btn) return interaction.reply({content: `Le bouton \`${interaction.customId}\` n'existe pas !`, ephemeral: true});
-
-            btn.runInteraction(client, interaction);
+            const args = interaction.customId.split('_');
+            const btn = client.buttons.get(`${args[0]}_${args[1]}`);
             
+            if (!btn) return interaction.reply({content: `Le bouton \`${args[0]}_${args[1]}\` n'existe pas !`, ephemeral: true});
+
+            btn.runInteraction(client, interaction, args);
         }
     }
 }
