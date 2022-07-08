@@ -56,10 +56,10 @@ Parmi les services qu'il rend :
 Le bot discord Epsius a besoin de plusieurs packages pour fonctionner : 
 
 <div align="center">
-    <a href='https://www.npmjs.com/package/discord.js'>
+    <a href='https://www.npmjs.com/package/discord.js' target='_blank' rel="noreferrer noopener">
         <img src='https://img.shields.io/github/package-json/dependency-version/louis-ducruet/Epsius-Discord-Bot/discord.js?color=7289da&logo=discord&logoColor=7289da&style=for-the-badge' alt='Badge discord.js'>
     </a>
-    <a href='https://www.npmjs.com/package/glob'>
+    <a href='https://www.npmjs.com/package/glob' target='_blank' rel="noreferrer noopener">
         <img src='https://img.shields.io/github/package-json/dependency-version/louis-ducruet/Epsius-Discord-Bot/glob?color=6c3eff&logo=Octopus%20Deploy&logoColor=d370e8&style=for-the-badge' alt='Badge glob'>
     </a>
 </div>
@@ -76,13 +76,25 @@ Les étapes pour lancé le projet sur votre machine en local.
 
 ## Prérequis
 
- - Avoir un Token pour son Bot Disocrd : [Tutoriel en anglais](https://discordjs.guide/preparations/setting-up-a-bot-application.html#creating-your-bot)
- - Avoir un serveur Discord : [Tutoriel](https://support.discord.com/hc/fr/articles/204849977-Comment-cr%C3%A9er-un-serveur-)
- - Installer Node.js : [Site](https://nodejs.org/en/) 
+ - Avoir un Token pour son Bot Disocrd : 
+<a href='https://discordjs.guide/preparations/setting-up-a-bot-application.html#creating-your-bot' target='_blank' rel="noreferrer noopener">
+    Tutoriel en anglais
+</a>
+ - Avoir un serveur Discord :
+<a href='https://support.discord.com/hc/fr/articles/204849977-Comment-cr%C3%A9er-un-serveur-' target='_blank' rel="noreferrer noopener">
+    Tutoriel
+</a>
+ - Installer Node.js :
+<a href='https://nodejs.org/en/' target='_blank' rel="noreferrer noopener">
+    Site
+</a>
 > **Note**
 > 
 > Discord.js nécésite Node.js 16.9.0 ou supérieur
- - Avoir git sur sa machine : [Site](https://git-scm.com/)
+ - Avoir git sur sa machine :
+<a href='https://git-scm.com/' target='_blank' rel="noreferrer noopener">
+    Site
+</a>
 
 <p align="right">(<a href="#readme-top">Haut de page ↑</a>)</p>
 
@@ -121,8 +133,20 @@ Vous avez une proposition d'amélioration pour le projet. N'hésitez pas à alle
 
 # Contact
 
-Louis DUCRUET - [GitHub](https://github.com/louis-ducruet) • [Twitter](https://twitter.com/louis_ducruet) • [LinkedIn](https://www.linkedin.com/in/louis-ducruet/) 
+Louis DUCRUET : 
+<a href='https://github.com/louis-ducruet' target='_blank' rel="noreferrer noopener">
+    <img src='https://img.shields.io/badge/GitHub-%40louis--ducret-0d1117?style=flat-square&logo=github' alt='Badge github'>
+</a>
+ • 
+<a href='https://twitter.com/louis_ducruet' target='_blank' rel="noreferrer noopener">
+    <img src='https://img.shields.io/badge/Twitter-%40louis__ducruet-1d9bf0?style=flat-square&logo=twitter' alt='Badge twitter'>
+</a>
+ • 
+<a href='https://www.linkedin.com/in/louis-ducruet/' target='_blank' rel="noreferrer noopener">
+    <img src='https://img.shields.io/badge/LinkedIn-%40louis--ducret-2265b2?style=flat-square&logo=linkedin' alt='Badge linkedin'>
+</a>
 
-Lien du projet - [https://github.com/louis-ducruet/Epsius-Discord-Bot](https://github.com/louis-ducruet/Epsius-Discord-Bot)
+
+Lien du projet : [https://github.com/louis-ducruet/Epsius-Discord-Bot](https://github.com/louis-ducruet/Epsius-Discord-Bot)
 
 <p align="right">(<a href="#readme-top">Haut de page ↑</a>)</p>
