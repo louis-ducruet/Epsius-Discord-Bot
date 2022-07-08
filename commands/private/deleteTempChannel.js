@@ -8,9 +8,14 @@ module.exports = {
         required: true
     }],
     async runSlash(client, interaction) {
+        // Récupération des données saisies
         const inputChannel = interaction.options.get('channel');
-        if (inputChannel.channel.type !== 'GUILD_TEXT' || inputChannel.channel.parentId !== '993875082038476800') return interaction.reply({ content: `Vous n'avez pas la permission de faire cette action !`, ephemeral: true });
+        
+        // Vérifier que le channel est supprimable par l'utilisateur
+        if (inputChannel.channel.type !== 'GUILD_TEXT' || inputChannel.channel.parentId !== process.envVar.discord.tempGroup) return interaction.reply({ content: `Vous n'avez pas la permission de faire cette action !`, ephemeral: true });
+        // Supprime le channel
         inputChannel.channel.delete(`Channel supprimé avec la commande /delete_temp_channel par ${interaction.user.username}#${interaction.user.discriminator}`);
+        // Envoie un message de log dans le channel de la commande
         interaction.reply({ content: `Le channel #${inputChannel.channel.name} a été supprimé avec succès !` });
     }
 }
