@@ -73,7 +73,7 @@ module.exports = {
         }
         
         // Ajout du bouton d'email
-        const buttons = new MessageActionRow()
+        let buttons = new MessageActionRow()
             .addComponents(
                 new MessageButton()
                     .setStyle('LINK')
@@ -81,7 +81,15 @@ module.exports = {
                     .setLabel('Envoyer un e-mail')
                     .setURL(`https://epsius-discord-bot.netlify.app/mailto/#${inputEmail}`)
             );
-        // Envoie le message
-        interaction.reply({ embeds: [embed], components: [buttons] });
+        // Vérifie que l'email est renseigné
+        if (inputEmail){
+            // Envoie le message
+            interaction.reply({ embeds: [embed], components: [buttons] });
+        }
+        // Si l'email n'est pas renseigné
+        else{
+            // Envoie le message
+            interaction.reply({ embeds: [embed] });
+        }        
     }
 }
