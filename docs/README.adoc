@@ -1,28 +1,7 @@
-// Variables de rédaction [Changer à chaque modification]
-:Auteur:    Louis DUCRUET
-:Email:     louis.ducruet@epsi.fr
-:Date:      12/07/2022 14:25
-:VersionDoc:  0.0.1
 // Constante du doc
-include::_const.adoc[]
+include::inc/_head.adoc[]
 
-// Header
-[.text-center]
-{Info-Bar} +
-{logo}
-[.text-center]
-== {nom} +
-Bot Discord pour le serveur SN2 22-23 WIPS Nantes.
-
-''''
-// Contenu de la page
-[.text-left]
-=== A propos
-[WARNING]
-====
-Documentation en cours de rédaction
-====
-
-// Bas de page
-''''
-Version *{VersionDoc}* de la page rédigé par *{auteur}* le *{date}*
+= Titre du document
+Louis DUCRUET <louis.ducruet@epsi.fr>; Louis DUCRUET <louis.ducruet@epsi.fr>
+0.0.1, {docdate}: A Special ⚄ Edition
+:description: description du doc
