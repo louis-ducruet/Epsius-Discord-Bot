@@ -1,28 +1,33 @@
-// Variables de rédaction [Changer à chaque modification]
-:Auteur:    Louis DUCRUET
-:Email:     louis.ducruet@epsi.fr
-:Date:      12/07/2022 14:25
-:VersionDoc:  0.0.1
-// Constante du doc
-include::_const.adoc[]
+// Importation de variables
+include::inc/_head.adoc[]
 
-// Header
+// Entête de la page
 [.text-center]
-{Info-Bar} +
-{logo}
+{projetLogo} 
 [.text-center]
-== {nom} +
-Bot Discord pour le serveur SN2 22-23 WIPS Nantes.
+[discrete]
+== {projetNom}
+:description: Page d'accueil de la documentation du projet {projetNom}
+:keywords: documentation, {projetNom}, Accueil
+[.text-center]
+{projetDescription}
 
 ''''
+
 // Contenu de la page
-[.text-left]
-=== A propos
-[WARNING]
-====
-Documentation en cours de rédaction
-====
+== Doc en cours de rédaction
 
-// Bas de page
-''''
-Version *{VersionDoc}* de la page rédigé par *{auteur}* le *{date}*
+ifdef::env-github[]
+IMPORTANT: La documentation n'est pas correctement visible sur GitHub. +
+Vous pouvez la lire sur le {projetSite}[site].
+endif::[]
+
+ifdef::env-browser[]
+NOTE: La documentation est disponible sous forme d'ebook. +
+Vous pouvez y avoir accès {projetPDF}[ici].
+endif::[]
+
+ifdef::backend-pdf[]
+NOTE: La documentation est disponible sous forme de site web. +
+Vous pouvez accéder a la dernière version {projetSite}[ici].
+endif::[]

@@ -1,0 +1,11 @@
+// Importation de variables
+include::../inc/_head.adoc[]
+
+// Entête de la page
+= Titre du document
+Prénom_1 NOM_1 <email-1@mail.fr>; Prénom_2 NOM_2 <email-2@mail.fr>
+1.0.0, {docdate}: Nom de la version (opt)
+:description: Description de la page
+:keywords: template, default, exemple
+
+// Contenu de la page
