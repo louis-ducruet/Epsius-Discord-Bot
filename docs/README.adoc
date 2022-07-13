@@ -1,7 +1,33 @@
-// Constante du doc
+// Importation de variables
 include::inc/_head.adoc[]
 
-= Titre du document
-Louis DUCRUET <louis.ducruet@epsi.fr>; Louis DUCRUET <louis.ducruet@epsi.fr>
-0.0.1, {docdate}: A Special ⚄ Edition
-:description: description du doc
+// Entête de la page
+[.text-center]
+{projetLogo} 
+[.text-center]
+[discrete]
+== {projetNom}
+:description: Page d'accueil de la documentation du projet {projetNom}
+:keywords: documentation, {projetNom}, Accueil
+[.text-center]
+{projetDescription}
+
+''''
+
+// Contenu de la page
+== Doc en cours de rédaction
+
+ifdef::env-github[]
+IMPORTANT: La documentation n'est pas correctement visible sur GitHub. +
+Vous pouvez la lire sur le {projetSite}[site].
+endif::[]
+
+ifdef::env-browser[]
+NOTE: La documentation est disponible sous forme d'ebook. +
+Vous pouvez y avoir accès {projetPDF}[ici].
+endif::[]
+
+ifdef::backend-pdf[]
+NOTE: La documentation est disponible sous forme de site web. +
+Vous pouvez accéder a la dernière version {projetSite}[ici].
+endif::[]
