@@ -1,18 +1,11 @@
-// Définition des icons github pour les info
-ifdef::env-github,env-browser[]
-:caution-caption: :rotating_light:
-:important-caption: :mega:
-:note-caption: :information_source:
-:tip-caption: :bulb:
-:warning-caption: :warning:
-endif::[]
+:caution-caption: 🚨
+:important-caption: 📢
+:note-caption: ℹ️
+:tip-caption: 💡
+:warning-caption: ⚠️
 
 // Désactivation du footer
 :nofooter:
-
-// Changement du nom de la table des matières
-:toc: left
-:toc-title: Sommaire
 
 //Constantes
 :projetNom:           Epsius-Discord-Bot

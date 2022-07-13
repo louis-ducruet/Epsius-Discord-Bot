@@ -19,10 +19,10 @@ include::inc/_head.adoc[]
 
 ifdef::env-github[]
 IMPORTANT: La documentation n'est pas correctement visible sur GitHub. +
-Vous pouvez la lire sur le {projetSite}[site].
+Vous pouvez la lire sur le site dont le lien est lié au repo.
 endif::[]
 
-ifdef::env-browser[]
+ifndef::env-github,backend-pdf[]
 NOTE: La documentation est disponible sous forme d'ebook. +
 Vous pouvez y avoir accès {projetPDF}[ici].
 endif::[]
