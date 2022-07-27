@@ -1,4 +1,4 @@
-const { MessageEmbed } = require("discord.js");
+const { EmbedBuilder } = require("discord.js");
 
 module.exports = {
     name: 'ping',
@@ -8,7 +8,7 @@ module.exports = {
         const tryPong = await interaction.reply({ content: 'Chargement des données ...', ephemeral: true, fetchReply: true});
 
         // Définition du contenu du message avec mise en page
-        const embed = new MessageEmbed()
+        const embed = new EmbedBuilder()
             .setTitle('ℹ Info sur le bot')
             .setThumbnail(client.user.displayAvatarURL())
             .setColor('#3a86c0')

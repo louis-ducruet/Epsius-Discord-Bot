@@ -1,8 +1,10 @@
+const {ApplicationCommandOptionType} = require('discord.js');
+
 module.exports = {
     name: 'delete_temp_channel',
     description: 'Supprime un salon temporaire.',
     options: [{
-        type: 'CHANNEL',
+        type: ApplicationCommandOptionType.Channel,
         name: 'channel',
         description: 'Channel à supprmier',
         required: true

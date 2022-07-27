@@ -1,8 +1,10 @@
+const {ApplicationCommandOptionType} = require('discord.js');
+
 module.exports = {
     name: 'close_temp_channel',
     description: 'Ferme un salon temporaire (Passe en lecture seule).',
     options: [{
-        type: 'CHANNEL',
+        type: ApplicationCommandOptionType.Channel,
         name: 'channel',
         description: 'Channel à fermer',
         required: true

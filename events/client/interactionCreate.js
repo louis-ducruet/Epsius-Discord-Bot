@@ -1,9 +1,11 @@
+const { InteractionType } = require('discord.js');
+
 module.exports = {
     name: 'interactionCreate',
     once: false,
     async execute(client, interaction) {
         // Si l'intéraction est une commande
-        if (interaction.isCommand()){
+        if (interaction.type === InteractionType.ApplicationCommand){
             // Récupération de l'objet
             const cmd = client.commands.get(interaction.commandName);
             // Vérifier que la commande existe
