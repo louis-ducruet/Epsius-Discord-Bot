@@ -1,3 +1,4 @@
+const {ApplicationCommandOptionType} = require('discord.js');
 // Génération des options de la commande en fonction des classes
 const choices = [{ name: 'Tous', value: 0 }];
 for (let i = 0; i < process.envVar.classes.length; i++) {
@@ -13,13 +14,13 @@ module.exports = {
     name: 'add_temp_channel',
     description: 'Créer un salon temporaire pour des discussions sur un module.',
     options: [{
-        type: 'STRING',
+        type: ApplicationCommandOptionType.String,
         name: 'nom',
         description: 'Le nom du channel',
         required: true
     },
     {
-        type: 'INTEGER',
+        type: ApplicationCommandOptionType.Integer,
         name: 'groupe',
         description: 'Le groupe qui peut voir le channel',
         required: true,

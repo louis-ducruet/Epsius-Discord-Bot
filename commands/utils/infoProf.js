@@ -1,32 +1,32 @@
-const { MessageEmbed, MessageActionRow, MessageButton } = require("discord.js");
+const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ApplicationCommandOptionType, ButtonStyle } = require("discord.js");
 
 module.exports = {
     name: 'info_prof',
     description: 'Envoie un message avec les informations sur un prof.',
     options: [{
-        type: 'STRING',
+        type: ApplicationCommandOptionType.String,
         name: 'nom',
         description: 'Le nom de l\'intervenant',
         required: true
     },
     {
-        type: 'STRING',
+        type: ApplicationCommandOptionType.String,
         name: 'modules',
         description: 'Les modules de l\'intervenant',
         required: true
     },
     {
-        type: 'STRING',
+        type: ApplicationCommandOptionType.String,
         name: 'email',
         description: 'L\'email de l\'intervenant'
     },
     {
-        type: 'STRING',
+        type: ApplicationCommandOptionType.String,
         name: 'discord',
         description: 'Le discord de l\'intervenant (User ID)'
     },
     {
-        type: 'STRING',
+        type: ApplicationCommandOptionType.String,
         name: 'autre',
         description: 'Information complémentaire comme une autre adresse email'
     }],
@@ -55,9 +55,8 @@ module.exports = {
             content: ':x: **Commande invalide** : Il faut au moins l\'email ou le discord valide', 
             ephemeral: true 
         });
-
         // Génération du message mis en page
-        const embed = new MessageEmbed()
+        const embed = new EmbedBuilder()
             .setTitle(inputNom)
             .setDescription(`${inputModules}\n‎`)
             .setThumbnail('https://cdn.icon-icons.com/icons2/3142/PNG/512/id_card_identity_name_identification_icon_192543.png')
@@ -66,18 +65,16 @@ module.exports = {
                 { name: 'Email', value: inputEmail ? inputEmail : '???', inline: true },
                 { name: 'Discord', value: inputDiscord ? `${profUser}\n${profUser.username}#${profUser.discriminator}` : '???', inline: true }
             )
-        
         // Ajoute le champ autre s'il est sélectionné
         if (inputAutre){
-            embed.addField('Autre', inputAutre, false);
+            embed.addFields({name: 'Autre', value: inputAutre, inline: false});
         }
-        
         // Ajout du bouton d'email
-        let buttons = new MessageActionRow()
+        let buttons = new ActionRowBuilder()
             .addComponents(
-                new MessageButton()
-                    .setStyle('LINK')
-                    .setEmoji({id: null, name: '📧'})
+                new ButtonBuilder()
+                    .setStyle(ButtonStyle.Link)
+                    .setEmoji({ name: '📧'})
                     .setLabel('Envoyer un e-mail')
                     .setURL(`https://epsius-discord-bot.netlify.app/mailto/#${inputEmail}`)
             );
@@ -90,6 +87,6 @@ module.exports = {
         else{
             // Envoie le message
             interaction.reply({ embeds: [embed] });
-        }        
+        }
     }
 }
