@@ -1,4 +1,4 @@
-const {ApplicationCommandOptionType, ChannelType} = require('discord.js');
+const {ApplicationCommandOptionType, ChannelType, PermissionFlagsBits} = require('discord.js');
 // Génération des options de la commande en fonction des classes
 const choices = [{ name: 'Tous', value: 0 }];
 for (let i = 0; i < process.envVar.classes.length; i++) {
@@ -32,12 +32,12 @@ module.exports = {
         const inputGroupe = interaction.options.getInteger('groupe');
 
         // Définition des permissions du channel temporaire
-        let permission = [{ id: process.envVar.discord.everyoneRole, deny: ['VIEW_CHANNEL'] }];
+        let permission = [{ id: process.envVar.discord.everyoneRole, deny: [PermissionFlagsBits.ViewChannel] }];
         // Si le channel est pour un groupe d'une classe
         if (Math.floor(inputGroupe/10) !== 0 && inputGroupe%10 !== 0){
             if (!interaction.member.roles.cache.has(process.envVar.classes[Math.floor(inputGroupe/10) - 1].adminsRole[inputGroupe%10 - 1])) return interaction.reply({ content: `Vous n'avez pas la permission de faire cette action !`, ephemeral: true });
             
-            permission.push({ id: process.envVar.classes[Math.floor(inputGroupe/10) - 1].groupesRole[inputGroupe%10 - 1], allow: ['VIEW_CHANNEL'] });
+            permission.push({ id: process.envVar.classes[Math.floor(inputGroupe/10) - 1].groupesRole[inputGroupe%10 - 1], allow: [PermissionFlagsBits.ViewChannel] });
         }
         // Si le channel est pour une classe
         else if (inputGroupe !== 0){
@@ -46,7 +46,7 @@ module.exports = {
             for (let i = 0; i < process.envVar.classes[Math.floor(inputGroupe/10) - 1].adminsRole.length; i++) {
                 if (interaction.member.roles.cache.has(process.envVar.classes[Math.floor(inputGroupe/10) - 1].adminsRole[i])) auth += 1;
                 
-                permission.push({ id: process.envVar.classes[Math.floor(inputGroupe/10) - 1].groupesRole[i], allow: ['VIEW_CHANNEL'] });
+                permission.push({ id: process.envVar.classes[Math.floor(inputGroupe/10) - 1].groupesRole[i], allow: [PermissionFlagsBits.ViewChannel] });
             }
             // Si les perms sont insufisante afficher un message d'erreur
             if (auth === 0) return interaction.reply({ content: `Vous n'avez pas la permission de faire cette action !`, ephemeral: true });
@@ -55,12 +55,13 @@ module.exports = {
         else{
             for (let i = 0; i < process.envVar.classes.length; i++) {
                 for (let j = 0; j < process.envVar.classes[i].groupesRole.length; j++) {
-                    permission.push({ id: process.envVar.classes[i].groupesRole[j], allow: ['VIEW_CHANNEL'] });
+                    permission.push({ id: process.envVar.classes[i].groupesRole[j], allow: [PermissionFlagsBits.ViewChannel] });
                 }
             }
         }
         // Création du channel temporaire
-        /*interaction.guild.channels.create(inputNom, { 
+        interaction.guild.channels.create({ 
+            name: inputNom,
             type: ChannelType.GuildText, 
             reason: `Channel créé avec la commande /add_temp_channel par ${interaction.user.username}#${interaction.user.discriminator}`,
             parent: process.envVar.discord.tempGroup,
@@ -69,8 +70,7 @@ module.exports = {
             // Envoie un message dans le channel nouvellement créé
             channel.send(`Bienvenue dans le channel temporaire ${inputNom} créé par ${interaction.user}!`);
             // Envoie un message dans le channel de la commande
-            interaction.reply({ content: `Le channel ${channel} a été créé avec succès !` });
-        });*/
-        interaction.reply({ content: `La commande add_temp_channel est momentanément indisponible.`, ephemeral: true });
+            interaction.reply(`Le channel ${channel} a été créé avec succès !`);
+        });
     }
 }
