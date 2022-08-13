@@ -1,3 +1,4 @@
+const { ActivityType } = require("discord.js");
 const logger = require("../../utils/modules/logger");
 
 module.exports = {
@@ -11,6 +12,6 @@ module.exports = {
         // Ajout des commandes au serveur
         devGuild.commands.set(client.commands.map(cmd => cmd));
         // Définie l'activité du bot
-        client.user.setActivity('la vie du serveur', {type: 'COMPETING'});
+        client.user.setActivity('la vie du serveur', { type: ActivityType.Competing });
     }
 }
