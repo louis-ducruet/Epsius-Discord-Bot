@@ -1,4 +1,4 @@
-const {ApplicationCommandOptionType} = require('discord.js');
+const {ApplicationCommandOptionType, ChannelType} = require('discord.js');
 // Génération des options de la commande en fonction des classes
 const choices = [{ name: 'Tous', value: 0 }];
 for (let i = 0; i < process.envVar.classes.length; i++) {
@@ -60,8 +60,8 @@ module.exports = {
             }
         }
         // Création du channel temporaire
-        interaction.guild.channels.create(inputNom, { 
-            type: 'GUILD_TEXT', 
+        /*interaction.guild.channels.create(inputNom, { 
+            type: ChannelType.GuildText, 
             reason: `Channel créé avec la commande /add_temp_channel par ${interaction.user.username}#${interaction.user.discriminator}`,
             parent: process.envVar.discord.tempGroup,
             permissionOverwrites: permission
@@ -70,6 +70,7 @@ module.exports = {
             channel.send(`Bienvenue dans le channel temporaire ${inputNom} créé par ${interaction.user}!`);
             // Envoie un message dans le channel de la commande
             interaction.reply({ content: `Le channel ${channel} a été créé avec succès !` });
-        });
+        });*/
+        interaction.reply({ content: `La commande add_temp_channel est momentanément indisponible.`, ephemeral: true });
     }
 }
