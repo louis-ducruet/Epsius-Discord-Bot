@@ -1,4 +1,4 @@
-const {ApplicationCommandOptionType} = require('discord.js');
+const {ApplicationCommandOptionType, ChannelType} = require('discord.js');
 
 module.exports = {
     name: 'delete_temp_channel',
@@ -14,7 +14,7 @@ module.exports = {
         const inputChannel = interaction.options.get('channel');
         
         // Vérifier que le channel est supprimable par l'utilisateur
-        if (inputChannel.channel.type !== 'GUILD_TEXT' || inputChannel.channel.parentId !== process.envVar.discord.tempGroup) return interaction.reply({ content: `Vous n'avez pas la permission de faire cette action !`, ephemeral: true });
+        if (inputChannel.channel.type !== ChannelType.GuildText || inputChannel.channel.parentId !== process.envVar.discord.tempGroup) return interaction.reply({ content: `Vous n'avez pas la permission de faire cette action !`, ephemeral: true });
         // Supprime le channel
         inputChannel.channel.delete(`Channel supprimé avec la commande /delete_temp_channel par ${interaction.user.username}#${interaction.user.discriminator}`);
         // Envoie un message de log dans le channel de la commande

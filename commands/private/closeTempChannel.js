@@ -1,4 +1,4 @@
-const {ApplicationCommandOptionType} = require('discord.js');
+const {ApplicationCommandOptionType, ChannelType} = require('discord.js');
 
 module.exports = {
     name: 'close_temp_channel',
@@ -14,7 +14,7 @@ module.exports = {
         const inputChannel = interaction.options.get('channel');
         
         // Vérifier que le channel est fermable par l'utilisateur
-        if (inputChannel.channel.type !== 'GUILD_TEXT' || inputChannel.channel.parentId !== process.envVar.discord.tempGroup) return interaction.reply({ content: `Vous n'avez pas la permission de faire cette action !`, ephemeral: true });
+        if (inputChannel.channel.type !== ChannelType.GuildText || inputChannel.channel.parentId !== process.envVar.discord.tempGroup) return interaction.reply({ content: `Vous n'avez pas la permission de faire cette action !`, ephemeral: true });
         // Retire les permissions d'écriture sur le channel
         process.envVar.classes.forEach(classe => {
             classe.adminsRole.forEach(admin => {
