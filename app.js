@@ -7,9 +7,10 @@ process.envVar = require('./env.json');
 // CHARGEMENT DES COMMANDES ET DES BOUTONS
 client.commands = new Collection();
 client.buttons = new Collection();
+client.modal = new Collection();
 
 logger.info('---- Importation ----')
-const handlers = ['CommandUtil', 'ButtonUtil', 'EventUtil']
+const handlers = ['CommandUtil', 'ButtonUtil', 'ModalUtil', 'EventUtil']
 handlers.forEach(handler => { require(`./utils/handlers/${handler}`)(client) });
 
 // GESTION DES ERREURS
