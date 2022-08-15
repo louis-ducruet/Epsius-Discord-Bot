@@ -21,7 +21,7 @@ module.exports = {
         description: 'L\'email de l\'intervenant'
     },
     {
-        type: ApplicationCommandOptionType.String,
+        type: ApplicationCommandOptionType.User,
         name: 'discord',
         description: 'Le discord de l\'intervenant (User ID)'
     },
@@ -35,21 +35,10 @@ module.exports = {
         const inputNom = interaction.options.getString('nom');
         const inputModules = interaction.options.getString('modules');
         let inputEmail = interaction.options.getString('email');
-        let inputDiscord = interaction.options.getString('discord');
+        let inputDiscord = interaction.options.getUser('discord');
         const inputAutre = interaction.options.getString('autre');
-        // Vérifier si l'id discord est correct
-        if (!RegExp('^[0-9]{18}$').test(inputDiscord)) inputDiscord = null;
         // Vérifier si l'email est correct
         if (!RegExp('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$').test(inputEmail)) inputEmail = null;
-        // Vérifier que l'utilisateur discord existe
-        let profUser = await client.users.fetch(inputDiscord)
-            .then((res) => {
-                return res
-            })
-            .catch(() => {
-                inputDiscord = null;
-                return null
-            });
         // Vérifie que l'email ou le discord est présent
         if (!inputDiscord && !inputEmail) return interaction.reply({ 
             content: ':x: **Commande invalide** : Il faut au moins l\'email ou le discord valide', 
@@ -63,7 +52,7 @@ module.exports = {
             .setColor('#3498db')
             .addFields(
                 { name: 'Email', value: inputEmail ? inputEmail : '???', inline: true },
-                { name: 'Discord', value: inputDiscord ? `${profUser}\n${profUser.username}#${profUser.discriminator}` : '???', inline: true }
+                { name: 'Discord', value: inputDiscord ? `${inputDiscord}\n${inputDiscord.username}#${inputDiscord.discriminator}` : '???', inline: true }
             )
         // Ajoute le champ autre s'il est sélectionné
         if (inputAutre){
