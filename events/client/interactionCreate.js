@@ -25,5 +25,14 @@ module.exports = {
             // Exécuter le code du bouton
             btn.runInteraction(client, interaction, args);
         }
+        // Si l'intéraction est une modal
+        else if (interaction.type === InteractionType.ModalSubmit){
+            // Récupération de l'objet
+            const mod = client.modal.get(interaction.customId);
+            // Vérifier que la modal existe
+            if (!mod) return interaction.reply({content: `La modal \`${interaction.customId}\` n'existe pas !`, ephemeral: true});
+            // Exécuter le code de la modal
+            await mod.runInteraction(client, interaction);
+        }
     }
 }
