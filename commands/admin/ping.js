@@ -15,7 +15,11 @@ module.exports = {
             .addFields(
                 { name: 'Latence API', value: `\`\`\`${client.ws.ping}ms\`\`\``, inline: true },
                 { name: 'Latence BOT', value: `\`\`\`${tryPong.createdTimestamp - interaction.createdTimestamp}ms\`\`\``, inline: true },
-                { name: 'BOT Uptime', value: `<t:${parseInt(client.readyTimestamp / 1000)}:R>`, inline: false }
+                { name: 'BOT Uptime', value: `<t:${parseInt(client.readyTimestamp / 1000)}:R>`, inline: false },
+                { name: 'OS Serveur', value: `\`\`\`${process.platform} ${process.arch}\`\`\``, inline: true },
+                { name: 'IP BOT', value: `\`\`\`${process.env.SERVER_IP}:${process.env.SERVER_PORT}\`\`\``, inline: true },
+                { name: 'Localisation', value: `\`\`\`${process.env.P_SERVER_LOCATION}\`\`\``, inline:true },
+                { name: 'Varsion Node', value: `\`\`\`${process.version}\`\`\``, inline: true }
             )
             .setTimestamp()
             .setFooter({
