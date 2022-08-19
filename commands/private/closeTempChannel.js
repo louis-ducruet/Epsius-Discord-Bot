@@ -1,4 +1,5 @@
 const {ApplicationCommandOptionType, ChannelType} = require('discord.js');
+const logger = require('../../utils/modules/logger');
 
 module.exports = {
     name: 'close_temp_channel',
@@ -25,7 +26,9 @@ module.exports = {
             });
         });
         // Envoie un message dans le channel pour informer sa cloture
-        inputChannel.channel.send(`Le channel vient d'être cloturé par ${interaction.user}`);
+        inputChannel.channel.send(`Le channel vient d'être cloturé par ${interaction.user}`).then(
+            logger.success(`Le channel ${inputChannel.channel.name} a été fermé avec succès !`, interaction.member.id, JSON.stringify(interaction, (key, value) => typeof value === "bigint" ? value.toString() + "n" : value), false)
+        );
         // Envoie un réponse dans la channel de la commande
         interaction.reply({ content: `Le channel ${inputChannel.channel} a été fermé avec succès !` })
     }

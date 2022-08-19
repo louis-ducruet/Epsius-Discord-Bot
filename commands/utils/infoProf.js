@@ -1,4 +1,5 @@
 const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ApplicationCommandOptionType, ButtonStyle } = require("discord.js");
+const logger = require('../../utils/modules/logger');
 
 module.exports = {
     name: 'info_prof',
@@ -77,5 +78,6 @@ module.exports = {
             // Envoie le message
             interaction.reply({ embeds: [embed] });
         }
+        logger.success('Ajout d\'un message info_prof', interaction.member.id, JSON.stringify(interaction, (key, value) => typeof value === "bigint" ? value.toString() + "n" : value), false);
     }
 }

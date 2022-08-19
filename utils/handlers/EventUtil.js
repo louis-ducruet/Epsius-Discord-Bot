@@ -9,7 +9,7 @@ module.exports = async client => {
         const event = require(eventFile);
 
         if (!eventList.includes(event.name)){
-            return logger.error(`Importation [EVENT]: ${event.name} n'est pas un évènement valide !`);
+            return logger.error(`Importation [EVENT]: ${event.name} n'est pas un évènement valide !`, 'root', JSON.stringify(event, (key, value) => typeof value === "bigint" ? value.toString() + "n" : value));
         }
 
         if (event.once) {
@@ -18,7 +18,7 @@ module.exports = async client => {
             client.on(event.name, (...args) => event.execute(client, ...args));
         }
 
-        logger.success(`Importation [EVENT]: ${event.name}`);
+        logger.success(`Importation [EVENT]: ${event.name}`, 'root', JSON.stringify(event, (key, value) => typeof value === "bigint" ? value.toString() + "n" : value));
     })
 }
 
