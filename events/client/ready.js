@@ -6,11 +6,11 @@ module.exports = {
     once: true,
     async execute(client) {
         // Log la disponibilité du bot
-        logger.info(`${client.user.username} est en ligne !`);
+        logger.info(`${client.user.username} est en ligne !`, 'root', 'Lancement d\'Epsius fini');
         // Déconnexion des serveur non valide
         client.guilds.cache.forEach(guild => {
             if (guild.id !== process.envVar.discord.guild){
-                logger.debug(`Déconnexion du serveur : ${guild.name}`)
+                logger.debug(`Déconnexion du serveur : ${guild.name}`, client.user.id, JSON.stringify(guild, (key, value) => typeof value === "bigint" ? value.toString() + "n" : value))
                 guild.leave()
             }
             

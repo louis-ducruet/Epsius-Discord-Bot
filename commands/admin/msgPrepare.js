@@ -1,4 +1,5 @@
 const { ApplicationCommandOptionType, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("discord.js");
+const logger = require('../../utils/modules/logger');
 
 module.exports = {
     name: 'message_prepare',
@@ -68,6 +69,8 @@ module.exports = {
         }
 
         // Envoyer le message de réponse
-        interaction.reply({ embeds: [embed], components: boutons, fetchReply: true });
+        interaction.reply({ embeds: [embed], components: boutons, fetchReply: true }).then(
+            logger(`Affichage du message préparer ${interaction.options._subcommand}`, interaction.member.id, JSON.stringify(interaction, (key, value) => typeof value === "bigint" ? value.toString() + "n" : value), false)
+        );
     }
 }

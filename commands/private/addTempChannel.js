@@ -1,4 +1,6 @@
 const {ApplicationCommandOptionType, ChannelType, PermissionFlagsBits} = require('discord.js');
+const logger = require('../../utils/modules/logger');
+
 // Génération des options de la commande en fonction des classes
 const choices = [{ name: 'Tous', value: 0 }];
 for (let i = 0; i < process.envVar.classes.length; i++) {
@@ -35,7 +37,10 @@ module.exports = {
         let permission = [{ id: process.envVar.discord.everyoneRole, deny: [PermissionFlagsBits.ViewChannel] }];
         // Si le channel est pour un groupe d'une classe
         if (Math.floor(inputGroupe/10) !== 0 && inputGroupe%10 !== 0){
-            if (!interaction.member.roles.cache.has(process.envVar.classes[Math.floor(inputGroupe/10) - 1].adminsRole[inputGroupe%10 - 1])) return interaction.reply({ content: `Vous n'avez pas la permission de faire cette action !`, ephemeral: true });
+            if (!interaction.member.roles.cache.has(process.envVar.classes[Math.floor(inputGroupe/10) - 1].adminsRole[inputGroupe%10 - 1])) {
+                logger.debug(`Vous n'avez pas la permission de faire cette action !`, interaction.member.id, JSON.stringify(interaction, (key, value) => typeof value === "bigint" ? value.toString() + "n" : value), false)
+                return interaction.reply({ content: `Vous n'avez pas la permission de faire cette action !`, ephemeral: true });
+            }
             
             permission.push({ id: process.envVar.classes[Math.floor(inputGroupe/10) - 1].groupesRole[inputGroupe%10 - 1], allow: [PermissionFlagsBits.ViewChannel] });
         }
@@ -49,7 +54,10 @@ module.exports = {
                 permission.push({ id: process.envVar.classes[Math.floor(inputGroupe/10) - 1].groupesRole[i], allow: [PermissionFlagsBits.ViewChannel] });
             }
             // Si les perms sont insufisante afficher un message d'erreur
-            if (auth === 0) return interaction.reply({ content: `Vous n'avez pas la permission de faire cette action !`, ephemeral: true });
+            if (auth === 0) {
+                logger.debug(`Vous n'avez pas la permission de faire cette action !`, interaction.member.id, JSON.stringify(interaction, (key, value) => typeof value === "bigint" ? value.toString() + "n" : value), false)
+                return interaction.reply({ content: `Vous n'avez pas la permission de faire cette action !`, ephemeral: true });
+            }
         }
         // Si le channel est pour toutes les classes
         else{
@@ -69,6 +77,7 @@ module.exports = {
         }).then(channel => {
             // Envoie un message dans le channel nouvellement créé
             channel.send(`Bienvenue dans le channel temporaire ${inputNom} créé par ${interaction.user}!`);
+            logger.sucess(`Le channel ${channel.nom} a été créé avec succès !`, interaction.member.id, JSON.stringify(interaction, (key, value) => typeof value === "bigint" ? value.toString() + "n" : value), false);
             // Envoie un message dans le channel de la commande
             interaction.reply(`Le channel ${channel} a été créé avec succès !`);
         });

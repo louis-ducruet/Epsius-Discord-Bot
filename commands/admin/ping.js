@@ -1,4 +1,5 @@
 const { EmbedBuilder } = require("discord.js");
+const logger = require('../../utils/modules/logger');
 
 module.exports = {
     name: 'ping',
@@ -28,6 +29,8 @@ module.exports = {
             });
 
         // Envoyer le message de réponse
-        interaction.editReply({ content: null, embeds: [embed] });
+        interaction.editReply({ content: null, embeds: [embed] }).then(
+            logger.success('Message d\'information serveur', interaction.member.id, JSON.stringify(interaction, (key, value) => typeof value === "bigint" ? value.toString() + "n" : value), false)
+        );
     }
 }

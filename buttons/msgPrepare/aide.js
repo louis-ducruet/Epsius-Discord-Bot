@@ -1,4 +1,5 @@
 const { ModalBuilder, ActionRowBuilder, TextInputBuilder, TextInputStyle } = require('discord.js');
+const logger = require('../../utils/modules/logger');
 
 module.exports = {
     name: 'btn_aide',
@@ -30,8 +31,8 @@ module.exports = {
         ]
 
         modal.addComponents(row)
-            
-        // Supprimer la réponse à l'intéraction
-        await interaction.showModal(modal);
+        interaction.showModal(modal).then(
+            logger.debug(`${interaction.member.id} à ouvert la modal d'aide`, interaction.member.id, JSON.stringify(interaction, (key, value) => typeof value === "bigint" ? value.toString() + "n" : value), false)
+        );
     }
 }

@@ -1,5 +1,5 @@
 const { EmbedBuilder, ChannelType, PermissionFlagsBits } = require('discord.js');
-
+const logger = require('../../utils/modules/logger');
 
 module.exports = {
     name: 'modal_aide',
@@ -28,6 +28,7 @@ module.exports = {
             }).then(channel => {
                 // Envoie un message dans le channel nouvellement créé
                 channel.send({embeds: [embed]});
+                logger.success(`Le channel ${channel.name} a été créé avec succès !`, interaction.user.id, JSON.stringify(channel, (key, value) => typeof value === "bigint" ? value.toString() + "n" : value), false)
                 // Envoie un message dans le channel de la modal
                 interaction.reply({ content: `Le channel ${channel} a été créé avec succès !`, ephemeral: true });
             });

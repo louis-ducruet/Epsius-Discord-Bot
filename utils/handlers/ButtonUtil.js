@@ -8,9 +8,9 @@ module.exports = async (client) => {
         
         const btn = require(btnFile);
 
-        if (!btn.name) return logger.error(`Importation [BTN]: ${btn.name} n'est pas un bouton valide !`);
+        if (!btn.name) return logger.error(`Importation [BTN]: ${btn.name} n'est pas un bouton valide !`, 'root', JSON.stringify(btn, (key, value) => typeof value === "bigint" ? value.toString() + "n" : value));
 
         client.buttons.set(btn.name, btn);
-        logger.success(`Importation [BTN]: ${btn.name}`);
+        logger.success(`Importation [BTN]: ${btn.name}`, 'root', JSON.stringify(btn, (key, value) => typeof value === "bigint" ? value.toString() + "n" : value));
     })
 }
