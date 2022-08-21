@@ -1,8 +1,10 @@
 name: transfert-server-log
 
 on:
+  
   schedule:
   - cron: "*/5 * * * *"
+  workflow_dispatch:
     
 jobs:
   stale:
