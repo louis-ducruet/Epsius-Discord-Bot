@@ -1,20 +1,17 @@
-name: asciidoctor-ghpages
+name: transfert-server-log
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  schedule:
+  - cron: "0 0 * * *"
     
 jobs:
-  build:
+  stale:
     runs-on: ubuntu-latest
-    
+
     steps:
-    - uses: actions/checkout@v3
-  
-    - name: asciidoctor-ghpages
-      uses: manoelcampos/asciidoctor-ghpages-action@v2.2.3
-      with:
-        pdf_build: true
-        source_dir: docs/
+    - name: Instalation des dépendances
+      run: apt-get update -qq && apt-get install -y -qq lftp
+    - name: Récupération du fichier
+      run: lftp sftp://${{ secrets.SFTP_USER }}:${{ secrets.SFTP_PWD }}@${{ secrets.SFTP_HOST }}:${{ secrets.SFTP_PORT }} -e "get /log.csv -o /log.csv; delete /log.csv; quit"
+    - name: Exportation du fichier
+      run: lftp ftp://${{ secrets.FTP_USER }}:${{ secrets.FTP_PWD }}@${{ secrets.FTP_HOST }} -e "put -O /log.csv /log.csv; quit"
