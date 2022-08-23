@@ -6,6 +6,8 @@ const choices = [{ name: 'Tous', value: 0 }];
 for (let i = 0; i < process.envVar.classes.length; i++) {
     // Pour chaque classe ajouter une option qui regroupe l'ensemble des groupes
     choices.push({ name: process.envVar.classes[i].nom, value: (i + 1) * 10 });
+    // Et une qui regroupe les personnes d'une même classe avec l'option
+    choices.push({ name: `${process.envVar.classes[i].nom} ${process.envVar.classes[i].nomOption}`, value: -((i + 1) * 10) });
     for (let j = 0; j < process.envVar.classes[i].groupesRole.length; j++) {
         // Pour chaque groupe faire une option qui le regroupe
         choices.push({ name: `${process.envVar.classes[i].nom} Groupe ${j + 1}`, value: ((i + 1) * 10) + j + 1 });
@@ -48,10 +50,13 @@ module.exports = {
         else if (inputGroupe !== 0){
             // Vérification des permissions de l'utilisateur
             let auth = 0;
-            for (let i = 0; i < process.envVar.classes[Math.floor(inputGroupe/10) - 1].adminsRole.length; i++) {
-                if (interaction.member.roles.cache.has(process.envVar.classes[Math.floor(inputGroupe/10) - 1].adminsRole[i])) auth += 1;
-                
-                permission.push({ id: process.envVar.classes[Math.floor(inputGroupe/10) - 1].groupesRole[i], allow: [PermissionFlagsBits.ViewChannel] });
+            for (let i = 0; i < process.envVar.classes[Math.floor(Math.abs(inputGroupe)/10) - 1].adminsRole.length; i++) {
+                if (interaction.member.roles.cache.has(process.envVar.classes[Math.floor(Math.abs(inputGroupe)/10) - 1].adminsRole[i])) auth += 1;
+                if (inputGroupe < 0){
+                    permission.push({ id: process.envVar.classes[Math.floor(Math.abs(inputGroupe)/10) - 1].optionRole, allow: [PermissionFlagsBits.ViewChannel] });
+                }else{
+                    permission.push({ id: process.envVar.classes[Math.floor(inputGroupe/10) - 1].groupesRole[i], allow: [PermissionFlagsBits.ViewChannel] });
+                }
             }
             // Si les perms sont insufisante afficher un message d'erreur
             if (auth === 0) {
@@ -77,7 +82,7 @@ module.exports = {
         }).then(channel => {
             // Envoie un message dans le channel nouvellement créé
             channel.send(`Bienvenue dans le channel temporaire ${inputNom} créé par ${interaction.user}!`);
-            logger.sucess(`Le channel ${channel.nom} a été créé avec succès !`, interaction.member.id, JSON.stringify(interaction, (key, value) => typeof value === "bigint" ? value.toString() + "n" : value), false);
+            logger.success(`Le channel ${channel.nom} a été créé avec succès !`, interaction.member.id, JSON.stringify(interaction, (key, value) => typeof value === "bigint" ? value.toString() + "n" : value), false);
             // Envoie un message dans le channel de la commande
             interaction.reply(`Le channel ${channel} a été créé avec succès !`);
         });
