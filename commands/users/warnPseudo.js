@@ -20,6 +20,9 @@ Epsius`
         .catch( err => {
             logger.error(`Demande de modification de pseudo non envoyé (${targetUser.nickname ? targetUser.nickname : targetUser.user.username})`, targetUser.user.id, JSON.stringify(interaction, (key, value) => typeof value === "bigint" ? value.toString() + "n" : value), false);
             targetUser.setNickname('Prénom dans pseudo!');
-        })
+        });
+        // Cloture l'interaction
+        interaction.deferReply()
+        return interaction.deleteReply()
     }
 }
