@@ -1,13 +1,13 @@
 {
   "name": "epsius-discord-bot",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "Bot Discord pour le serveur SN2 22-23 WIPS Nantes.",
   "main": "app.js",
   "repository": "https://github.com/louis-ducruet/Epsius-Discord-Bot.git",
   "author": "Louis-Ducruet <louis.ducruet@epsi.fr>",
   "license": "MIT",
   "dependencies": {
-    "discord.js": "^14.2.0",
+    "discord.js": "^14.3.0",
     "glob": "^8.0.3"
   }
 }
