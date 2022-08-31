@@ -35,17 +35,33 @@ module.exports = {
                     boutons.push(new ActionRowBuilder());
                     for (let j = 0; j < process.envVar.classes[i].groupesRole.length; j++) {
                         // Pour chaque groupe faire un bouton simple et un avec l'option
-                        boutons[i].addComponents(
-                            new ButtonBuilder()
-                                .setStyle((j+i)%2 == 0 ? ButtonStyle.Primary : ButtonStyle.Success)
-                                .setLabel(`${process.envVar.classes[i].nom} G${j + 1}`)
-                                .setCustomId(`btn_giverole_${i}_${j}_0`),
-                                
-                            new ButtonBuilder()
-                                .setStyle((j+i)%2 == 0 ? ButtonStyle.Secondary : ButtonStyle.Danger)
-                                .setLabel(`${process.envVar.classes[i].nom} G${j + 1} + ${process.envVar.classes[i].nomOption}`)
-                                .setCustomId(`btn_giverole_${i}_${j}_1`)
-                        );
+                        if (process.envVar.classes[i].groupesRole.length > 1){
+                            boutons[i].addComponents(
+                                new ButtonBuilder()
+                                    .setStyle((j+i)%2 == 0 ? ButtonStyle.Primary : ButtonStyle.Success)
+                                    .setLabel(`${process.envVar.classes[i].nom} G${j + 1}`)
+                                    .setCustomId(`btn_giverole_${i}_${j}_0`),
+                                    
+                                new ButtonBuilder()
+                                    .setStyle((j+i)%2 == 0 ? ButtonStyle.Secondary : ButtonStyle.Danger)
+                                    .setLabel(`${process.envVar.classes[i].nom} G${j + 1} + ${process.envVar.classes[i].nomOption}`)
+                                    .setCustomId(`btn_giverole_${i}_${j}_1`)
+                            );
+                        }
+                        else {
+                            boutons[i].addComponents(
+                                new ButtonBuilder()
+                                    .setStyle((j+i)%2 == 0 ? ButtonStyle.Primary : ButtonStyle.Success)
+                                    .setLabel(`${process.envVar.classes[i].nom}`)
+                                    .setCustomId(`btn_giverole_${i}_${j}_0`),
+                                    
+                                new ButtonBuilder()
+                                    .setStyle((j+i)%2 == 0 ? ButtonStyle.Secondary : ButtonStyle.Danger)
+                                    .setLabel(`${process.envVar.classes[i].nom} + ${process.envVar.classes[i].nomOption}`)
+                                    .setCustomId(`btn_giverole_${i}_${j}_1`)
+                            );
+                        }
+                        
                     }
                 }
                 break;
@@ -70,7 +86,7 @@ module.exports = {
 
         // Envoyer le message de réponse
         interaction.reply({ embeds: [embed], components: boutons, fetchReply: true }).then(
-            logger(`Affichage du message préparer ${interaction.options._subcommand}`, interaction.member.id, JSON.stringify(interaction, (key, value) => typeof value === "bigint" ? value.toString() + "n" : value), false)
+            logger.success(`Affichage du message préparer ${interaction.options._subcommand}`, interaction.member.id, JSON.stringify(interaction, (key, value) => typeof value === "bigint" ? value.toString() + "n" : value), false)
         );
     }
 }
