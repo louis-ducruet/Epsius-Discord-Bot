@@ -10,9 +10,5 @@ module.exports = {
         interaction.channel.delete().then(
             logger.success(`Le channel ${interaction.channel.name} a été purgé`, interaction.member.id, JSON.stringify(interaction, (key, value) => typeof value === "bigint" ? value.toString() + "n" : value), false)
         )
-        // Cloture l'interaction
-        interaction.deferReply()
-        return interaction.deleteReply()
-
     }
 }
