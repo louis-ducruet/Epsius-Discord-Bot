@@ -1,4 +1,4 @@
-const { ApplicationCommandType } = require("discord.js");
+const { ApplicationCommandType, InteractionWebhook } = require("discord.js");
 const logger = require('../../utils/modules/logger');
 
 module.exports = {
@@ -22,7 +22,6 @@ Epsius`
             targetUser.setNickname('Prénom dans pseudo!');
         });
         // Cloture l'interaction
-        interaction.deferReply()
-        return interaction.deleteReply()
+        interaction.reply({ content: 'Le signalement a été pris en compte', ephemeral: true})
     }
 }

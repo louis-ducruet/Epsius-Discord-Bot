@@ -15,7 +15,6 @@ module.exports = {
         });
 
         // Supprimer la réponse à l'intéraction
-        interaction.deferReply()
-        return interaction.deleteReply();
+        interaction.reply({content: 'Bienvenue, j\'espère que tu as bien lu le règlement', ephemeral: true})
     }
 }
