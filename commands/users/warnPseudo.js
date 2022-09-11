@@ -1,4 +1,4 @@
-const { ApplicationCommandType, InteractionWebhook } = require("discord.js");
+const { ApplicationCommandType } = require("discord.js");
 const logger = require('../../utils/modules/logger');
 
 module.exports = {
@@ -27,6 +27,13 @@ Merci de modifier **au plus vite** votre pseudo
             targetUser.setNickname('Prénom dans pseudo!');
         });
         // Cloture l'interaction
+        client.channels.cache.get(process.envVar.discord.logChannel).send(`
+${interaction.user} a warn le pseudo de ${targetUser.user}
+\`\`\`
+${targetUser.nickname ? targetUser.nickname : targetUser.user.username}
+\`\`\`
+__Règle :__ Ne respecte pas les règles concernant le pseudonyme. - __Sanction :__ Rappel des règles - __Date :__ <t:${parseInt(Date.now() / 1000)}:f>
+        `);
         interaction.reply({ content: 'Le signalement a été pris en compte', ephemeral: true})
     }
 }
