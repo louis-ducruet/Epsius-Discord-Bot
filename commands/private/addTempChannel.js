@@ -82,7 +82,7 @@ module.exports = {
         }).then(channel => {
             // Envoie un message dans le channel nouvellement créé
             channel.send(`Bienvenue dans le channel temporaire ${inputNom} créé par ${interaction.user}!`);
-            logger.success(`Le channel ${channel.nom} a été créé avec succès !`, interaction.member.id, JSON.stringify(interaction, (key, value) => typeof value === "bigint" ? value.toString() + "n" : value), false);
+            logger.success(`Le channel ${channel.name} a été créé avec succès !`, interaction.member.id, JSON.stringify(interaction, (key, value) => typeof value === "bigint" ? value.toString() + "n" : value), false);
             // Envoie un message dans le channel de la commande
             interaction.reply(`Le channel ${channel} a été créé avec succès !`);
         });
