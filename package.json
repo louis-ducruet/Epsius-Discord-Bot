@@ -8,6 +8,6 @@
   "license": "MIT",
   "dependencies": {
     "discord.js": "^14.3.0",
-    "glob": "^8.0.3"
+    "glob": "^9.2.1"
   }
 }
